@@ -94,7 +94,7 @@
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _math_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./math.js */ \"./src/math.js\");\n\r\n\r\nconsole.log(_math_js__WEBPACK_IMPORTED_MODULE_0__[\"sum\"](1, 2));\r\n\n\n//# sourceURL=webpack:///./src/app.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _math_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./math.js */ \"./src/math.js\");\n\r\n\r\nalert(_math_js__WEBPACK_IMPORTED_MODULE_0__[\"sum\"](1, 2));\r\n\n\n//# sourceURL=webpack:///./src/app.js?");
 
 /***/ }),
 
