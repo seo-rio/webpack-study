@@ -20,6 +20,7 @@
   "dependencies": {
     "@babel/cli": "^7.14.3",
     "@babel/core": "^7.14.3",
+    "@babel/plugin-transform-strict-mode": "^7.12.13",
     "clean-webpack-plugin": "^4.0.0-alpha.0",
     "css-loader": "^5.2.4",
     "file-loader": "^6.2.0",
