@@ -12,6 +12,8 @@
   "devDependencies": {
     "@babel/plugin-transform-arrow-functions": "^7.13.0",
     "@babel/plugin-transform-block-scoping": "^7.14.2",
+    "babel-loader": "^8.2.2",
+    "eslint": "^7.27.0",
     "html-webpack-plugin": "^4.5.2",
     "mini-css-extract-plugin": "^1.6.0",
     "webpack": "^4.46.0",
@@ -21,7 +23,9 @@
     "@babel/cli": "^7.14.3",
     "@babel/core": "^7.14.3",
     "@babel/plugin-transform-strict-mode": "^7.12.13",
+    "@babel/preset-env": "^7.14.2",
     "clean-webpack-plugin": "^4.0.0-alpha.0",
+    "core-js": "^2.6.12",
     "css-loader": "^5.2.4",
     "file-loader": "^6.2.0",
     "style-loader": "^2.0.0",
