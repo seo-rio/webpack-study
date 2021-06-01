@@ -1,7 +1,7 @@
 /*!
  * 
- *         Build Date: 2021-5-31 5:57:12 ├F10: PM┤
- *         Commit Version: b09db65
+ *         Build Date: 2021-6-1 5:46:57 ├F10: PM┤
+ *         Commit Version: a6f0d3b
  * 
  *         Author: seo-rio
  * 
@@ -102,7 +102,7 @@
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-eval("// const alert = (msg) => window.alert(msg);\n// new Promise();\nconsole.log()(function () {})();\n\n//# sourceURL=webpack:///./app.js?");
+eval("console.log()(function () {})();\n\n//# sourceURL=webpack:///./app.js?");
 
 /***/ })
 
