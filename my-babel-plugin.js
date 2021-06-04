@@ -11,10 +11,10 @@ module.exports = function myBabelPlugin() {
       //     path.node.name = name.split("").reverse().join("");
       //   },
       VariableDeclaration(path) {
-        console.log("VariableDeclaration() kind:", path.node.kind); // const
+        console.log('VariableDeclaration() kind:', path.node.kind); // const
 
-        if (path.node.kind === "const") {
-          path.node.kind = "var";
+        if (path.node.kind === 'const') {
+          path.node.kind = 'var';
         }
       },
     },
