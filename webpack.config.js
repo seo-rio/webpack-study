@@ -5,6 +5,7 @@ const childProcess = require('child_process');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const apiMocker = require('connect-api-mocker');
 
 module.exports = {
   mode: 'development',
@@ -19,6 +20,18 @@ module.exports = {
   devServer: {
     overlay: true,
     stats: 'errors-only',
+    before: app => {
+      // express 객체 app
+      // app.get('/api/users', (req, res) => {
+      //   // express에 app이란 객체를 이용하여 get요청을 처리하는 함수를 작성한다.
+      //   res.json([
+      //     { id: 1, name: 'Alice' },
+      //     { id: 2, name: 'Kim' },
+      //     { id: 3, name: 'Seo' },
+      //   ]);
+      // });
+      app.use(apiMocker('/api', 'mocks/api'));
+    },
   },
   module: {
     // rules: [
