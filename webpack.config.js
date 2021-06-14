@@ -6,12 +6,16 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const apiMocker = require('connect-api-mocker');
+const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const TarserPlugin = require('terser-webpack-plugin');
+
+const mode = process.env.NODE_ENV || 'development'; // 기본값을 development로 설정
 
 module.exports = {
-  mode: 'development',
+  mode: mode,
   entry: {
     main: './src/app.js',
-    // main: './app.js',
+    // result: './src/result.js',
   },
   output: {
     path: path.resolve('./dist'), // node의 path 모듈을 가져와 절대경로를 삽입한다.
@@ -33,6 +37,24 @@ module.exports = {
       app.use(apiMocker('/api', 'mocks/api'));
     },
     hot: true,
+  },
+  optimization: {
+    minimizer:
+      mode === 'production'
+        ? [
+            new OptimizeCSSAssetsPlugin(),
+            new TarserPlugin({
+              terserOptions: {
+                compress: {
+                  drop_console: true, // 콘솔 로그를 제거한다
+                },
+              },
+            }),
+          ]
+        : [],
+    // splitChunks: {
+    //   chunks: 'all',
+    // },
   },
   module: {
     // rules: [

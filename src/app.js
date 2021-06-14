@@ -25,7 +25,8 @@
 
 /** 핫 모듈 리플레이스먼트 적용을 위한 코드 */
 import form from './form';
-import result from './result';
+// import result from './result';
+import './app.css';
 
 let resultEl;
 let formEl;
@@ -34,9 +35,12 @@ document.addEventListener('DOMContentLoaded', async () => {
   formEl.innerHTML = form.render();
   document.body.appendChild(formEl);
 
-  resultEl = document.createElement('div');
-  resultEl.innerHTML = await result.render();
-  document.body.appendChild(resultEl);
+  import(/* webpackChunkName: "result" */ './result.js').then(async m => {
+    const result = m.default;
+    resultEl = document.createElement('div');
+    resultEl.innerHTML = await result.render();
+    document.body.appendChild(resultEl);
+  });
 });
 
 if (module.hot) {
